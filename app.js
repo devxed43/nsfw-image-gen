@@ -1,4 +1,3 @@
-
 // HTML Selectors, elems
 const result = document.querySelector(".result");
 
@@ -18,40 +17,31 @@ const trapUrl = "https://api.waifu.pics/nsfw/trap";
 // display functions - ingest api, display content structure
 function displayWaifu(data) {
   result.innerHTML = "";
-
   const img = document.createElement("img");
   img.src = data.url;
   img.alt = "waifu";
-  img.style.width = "auto";
-  img.style.height = "90vh";
-  img.style.padding = "0";
   img.setAttribute("class", "apiImg");
+  img.addEventListener("click", fetchWaifu);
   result.appendChild(img);
 }
 
 function displayNeko(data) {
   result.innerHTML = "";
-
   const img = document.createElement("img");
   img.src = data.url;
   img.alt = "neko";
-  img.style.width = "auto";
-  img.style.height = "90vh";
-  img.style.padding = "0";
   img.setAttribute("class", "apiImg");
+  img.addEventListener("click", fetchNeko);
   result.appendChild(img);
 }
 
 function displayBlowjob(data) {
   result.innerHTML = "";
-
   const img = document.createElement("img");
   img.src = data.url;
   img.alt = "blowjob";
-  img.style.width = "auto";
-  img.style.height = "90vh";
-  img.style.padding = "0";
   img.setAttribute("class", "apiImg");
+  img.addEventListener("click", fetchBlowjob);
   result.appendChild(img);
 }
 
@@ -61,10 +51,8 @@ function displayTrap(data) {
   const img = document.createElement("img");
   img.src = data.url;
   img.alt = "trap";
-  img.style.width = "auto";
-  img.style.height = "90vh";
-  img.style.padding = "0";
   img.setAttribute("class", "apiImg");
+  img.addEventListener("click", fetchTrap);
   result.appendChild(img);
 }
 
@@ -117,5 +105,3 @@ waifuBtn.addEventListener("click", fetchWaifu);
 nekoBtn.addEventListener("click", fetchNeko);
 blowJobBtn.addEventListener("click", fetchBlowjob);
 trapBtn.addEventListener("click", fetchTrap);
-
-
